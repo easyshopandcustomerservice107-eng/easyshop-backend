@@ -10,6 +10,7 @@ const ApiError = require('./utils/ApiError');
 const app = express();
 
 // Set security HTTP headers
+
 app.use(helmet());
 
 // Development logging
@@ -35,11 +36,11 @@ const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:5173',
-    'http://localhost:4173', 
-    'https://linen-bedding-frontend.vercel.app', 
+    'http://localhost:4173',
+    'https://linen-bedding-frontend.vercel.app',
     'http://192.168.1.17:3000',
-    'https://www.avenlybyhuma.com', 
-    'https://avenlybyhuma.com', 
+    'https://www.avenlybyhuma.com',
+    'https://avenlybyhuma.com',
     'https://avenlybyhuma-client.vercel.app'
 ];
 
@@ -50,10 +51,10 @@ const corsOptions = {
     origin: function (origin, callback) {
         // allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        
+
         // Remove trailing slash if present for comparison
         const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
-        
+
         if (allowedOrigins.indexOf(normalizedOrigin) !== -1 || allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
@@ -72,7 +73,6 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to E-commerce API' });
 });
 
-// API Routes
 // API Routes
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');

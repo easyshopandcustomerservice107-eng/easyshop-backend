@@ -35,11 +35,11 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         enum: ['user', 'admin'],
-        default: 'user'
+        default: 'admin'
     },
     isVerified: {
         type: Boolean,
-        default: false
+        default: true
     },
     verificationToken: String,
     verificationTokenExpire: Date,
@@ -56,11 +56,16 @@ const userSchema = new mongoose.Schema({
 
 // Encrypt password using bcrypt
 userSchema.pre('save', async function () {
+    console.log('ENTERING PRE-SAVE HOOK');
     if (!this.isModified('password')) {
+        console.log('PASSWORD NOT MODIFIED, SKIPPING HASH');
         return;
     }
+    console.log('GENERATING SALT...');
     const salt = await bcrypt.genSalt(10);
+    console.log('SALT GENERATED. HASHING PASSWORD...');
     this.password = await bcrypt.hash(this.password, salt);
+    console.log('PASSWORD HASHED. EXITING PRE-SAVE HOOK');
 });
 
 // Sign JWT and return

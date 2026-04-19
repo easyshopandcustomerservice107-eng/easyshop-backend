@@ -41,7 +41,9 @@ const allowedOrigins = [
     'http://192.168.1.17:3000',
     'https://www.avenlybyhuma.com',
     'https://avenlybyhuma.com',
-    'https://avenlybyhuma-client.vercel.app'
+    'https://avenlybyhuma-client.vercel.app',
+    'https://easyshop-admin.vercel.app',
+    'https://easyshop-frontend-eta.vercel.app'
 ];
 
 if (process.env.CLIENT_URL) allowedOrigins.push(process.env.CLIENT_URL);

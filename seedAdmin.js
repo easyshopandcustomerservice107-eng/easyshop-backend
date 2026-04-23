@@ -15,7 +15,7 @@ const createAdmin = async () => {
         // Admin Data
         const adminData = {
             name: 'System Admin',
-            email: 'superadmin@easycustomerservice.online',
+            email: 'webadmin@easyshop.com',
             password: 'superADMINpassword123@',
             phone: '1234567890',
             role: 'admin',

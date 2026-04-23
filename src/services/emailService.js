@@ -2,6 +2,7 @@ const transporter = require('../config/mailer');
 
 const brandColor = '#C5A059';
 const brandName = 'Easy Shop and Customer Service';
+const brandEmail = 'easyshopandcustomerservice107@gmail.com';
 
 const emailWrapper = (content) => `
 <!DOCTYPE html>
@@ -67,7 +68,7 @@ exports.sendVerificationEmail = async (email, verificationToken) => {
     `;
 
     const mailOptions = {
-        from: `"${brandName}" <${process.env.EMAIL_USER}>`,
+        from: `"${brandName}" <${brandEmail}>`,
         to: email,
         subject: `Verify your ${brandName} account`,
         html: emailWrapper(content)
@@ -101,7 +102,7 @@ exports.sendPasswordResetEmail = async (email, resetToken) => {
     `;
 
     const mailOptions = {
-        from: `"${brandName}" <${process.env.EMAIL_USER}>`,
+        from: `"${brandName}" <${brandEmail}>`,
         to: email,
         subject: `Reset your ${brandName} password`,
         html: emailWrapper(content)
@@ -141,7 +142,7 @@ exports.sendOrderConfirmationEmail = async (email, order) => {
     `;
 
     const mailOptions = {
-        from: `"${brandName}" <${process.env.EMAIL_USER}>`,
+        from: `"${brandName}" <${brandEmail}>`,
         to: email,
         subject: `Confirmation — ${brandName} Order ${order._id}`,
         html: emailWrapper(content)
@@ -181,7 +182,7 @@ exports.sendShippingUpdateEmail = async (email, order) => {
     `;
 
     const mailOptions = {
-        from: `"${brandName}" <${process.env.EMAIL_USER}>`,
+        from: `"${brandName}" <${brandEmail}>`,
         to: email,
         subject: `Dispatched — ${brandName} Order ${order._id}`,
         html: emailWrapper(content)

@@ -37,13 +37,11 @@ const allowedOrigins = [
     'http://localhost:3001',
     'http://localhost:5173',
     'http://localhost:4173',
-    'https://linen-bedding-frontend.vercel.app',
     'http://192.168.1.17:3000',
-    'https://www.avenlybyhuma.com',
-    'https://avenlybyhuma.com',
-    'https://avenlybyhuma-client.vercel.app',
     'https://easyshop-admin.vercel.app',
-    'https://easyshop-frontend-eta.vercel.app'
+    'https://easyshop-frontend-eta.vercel.app',
+    'https://www.easyshopcustomerservice.online',
+    'https://admin.easyshopcustomerservice.online'
 ];
 
 if (process.env.CLIENT_URL) allowedOrigins.push(process.env.CLIENT_URL);

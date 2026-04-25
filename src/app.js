@@ -40,6 +40,7 @@ const allowedOrigins = [
     'http://192.168.1.17:3000',
     'https://easyshop-admin.vercel.app',
     'https://easyshop-frontend-eta.vercel.app',
+    'https://easyshopcustomerservice.online',
     'https://www.easyshopcustomerservice.online',
     'https://admin.easyshopcustomerservice.online'
 ];
